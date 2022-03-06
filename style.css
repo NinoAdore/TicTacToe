@@ -1,0 +1,185 @@
+html {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: gainsboro;
+  color: #d47011;
+  font-family: "Indie Flower", "Comic Sans";
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  padding: 0%;
+  margin: 0%;
+}
+
+h2 {
+  font-size: 40px;
+  padding: 0%;
+  margin: 0%;
+  color: aqua;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin: 20px auto 10px auto;
+  gap: 2px;
+  justify-content: center;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #1a1a1a;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.square:hover {
+  background-color: rgb(179, 175, 175);
+}
+
+.gameOver .square:hover,
+.square.X:hover,
+.square.O:hover {
+  background-color: inherit;
+  cursor: default;
+}
+
+.square .outline {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+}
+
+.square .tile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+}
+
+.square.X .outline:before {
+  content: "";
+  background: #1a1a1a;
+  width: 14px;
+  height: 58px;
+  position: absolute;
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+.square.X .outline:after {
+  content: "";
+  background: #1a1a1a;
+  width: 14px;
+  height: 58px;
+  position: absolute;
+  transform: rotate(-45deg);
+  z-index: 2;
+}
+
+.square.X .tile:before {
+  content: "";
+  background: #f7e603;
+  width: 8px;
+  height: 52px;
+  position: absolute;
+  transform: rotate(45deg);
+  z-index: 3;
+}
+
+.square.X .tile:after {
+  content: "";
+  background: #f7e603;
+  width: 8px;
+  height: 52px;
+  position: absolute;
+  transform: rotate(-45deg);
+  z-index: 3;
+}
+
+.square.O .outline:before {
+  content: "";
+  background: transparent;
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  border-radius: 50%;
+  border: 14px solid #1a1a1a;
+  z-index: 2;
+}
+
+.square.O .tile:after {
+  content: "";
+  background: transparent;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  border-radius: 50%;
+  border: 8px solid #03cc67;
+  z-index: 3;
+}
+
+button {
+  background-color: #08b66d;
+  font-family: "Indie Flower", "Comic Sans", cursive;
+  font-size: 20px;
+  color: white;
+  border: none;
+  padding: 5px 16px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
+  transition: 2s ease-out;
+  cursor: pointer;
+}
+
+.btn {
+  display: none;
+  margin-bottom: 10px;
+  justify-content: space-evenly;
+}
+
+.btn button {
+  background-color: #acee14;
+}
+
+.btn button:hover {
+  background-color: #08b66d;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16), 0 5px 6px rgba(0, 0, 0, 0.26);
+}
+
+button:hover {
+  background-color: #acee14;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16), 0 5px 6px rgba(0, 0, 0, 0.26);
+}
+
+.tictactoe {
+  background-color: aliceblue;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 2px 5px rgba(0, 0, 0, 0.7);
+}
